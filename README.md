@@ -1,5 +1,7 @@
 # datav
-
+```
+针对移动端及大屏适配方案
+```
 ## Project setup
 ```
 npm install
