@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import echarts from "@/utils/initEcharts";
 import { options_line, options_pie } from "./options";
 export default {
   name: "Home",
@@ -33,16 +34,17 @@ export default {
   methods: {
     drawSline() {
       // 基于准备好的dom，初始化echarts实例
-      this.charts_line = this.$echarts.init(document.getElementById("rz"));
+      this.charts_line = echarts.init(document.getElementById("rz"));
       // 绘制图表
       this.charts_line.setOption(options_pie);
       // 监听窗口缩放
       window.addEventListener("resize", () => {
         this.charts_line.resize();
       });
+      console.log(1111);
     },
     drawLine() {
-      this.charts_pie = this.$echarts.init(document.getElementById("cw"));
+      this.charts_pie = echarts.init(document.getElementById("cw"));
       this.charts_pie.setOption(options_line);
       window.addEventListener("resize", () => {
         this.charts_pie.resize();
