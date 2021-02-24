@@ -80,8 +80,11 @@
 
   function refreshRem() {
     var width = docEl.getBoundingClientRect().width;
-    if (width / dpr > 540) {
-      width = width * dpr; //当屏幕宽度超过540的时候我们应该以实际宽度重新计算,从而来做到适应PC
+    // 最小1366px，最大适配2560px
+    if (width / dpr < 920) {
+      width = 920 * dpr;
+    } else if (width / dpr > 2560) {
+      width = 2560 * dpr;
     }
     var rem = width / 10;
     docEl.style.fontSize = rem + "px";
