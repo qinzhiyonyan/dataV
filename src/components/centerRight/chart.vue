@@ -29,13 +29,14 @@ export default {
             trigger: "item"
           },
           legend: {
-            top: "5%",
+            top: "6%",
             left: "center"
           },
           series: [
             {
               name: "访问来源",
               type: "pie",
+              top: "18%",
               radius: ["40%", "70%"],
               avoidLabelOverlap: false,
               itemStyle: {

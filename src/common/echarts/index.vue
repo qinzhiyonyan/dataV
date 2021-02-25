@@ -54,7 +54,7 @@ export default {
   },
   beforeDestroy() {
     if (this.chart) {
-      this.chart.clear();
+      this.chart.dispose();
     }
     window.removeEventListener(
       "resize",

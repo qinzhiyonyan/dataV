@@ -80,9 +80,9 @@
 
   function refreshRem() {
     var width = docEl.getBoundingClientRect().width;
-    // 最小1366px，最大适配2560px
-    if (width / dpr < 920) {
-      width = 920 * dpr;
+    // 最小720px，最大适配2560px
+    if (width / dpr < 720) {
+      width = 720 * dpr;
     } else if (width / dpr > 2560) {
       width = 2560 * dpr;
     }
