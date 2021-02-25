@@ -4,7 +4,7 @@
 
 <script>
 import echarts from "@/utils/initEcharts";
-import debounce from "@/utils";
+import { debounce } from "@/utils";
 export default {
   name: "echart",
   props: {
@@ -38,7 +38,7 @@ export default {
     options: {
       handler(options) {
         // 设置true清空echart缓存
-        this.initChart(this.$el, options);
+        this.chart.setOption(options, true);
       },
       deep: true
     }
@@ -46,10 +46,22 @@ export default {
   mounted() {
     this.initChart();
   },
+  activated() {
+    // 防止 keep-alive 之后图表变形
+    if (this.chart) {
+      this.chart.resize();
+    }
+  },
   beforeDestroy() {
     if (this.chart) {
       this.chart.clear();
     }
+    window.removeEventListener(
+      "resize",
+      debounce(() => {
+        this.chart.resize();
+      }, 300)
+    );
   },
 
   methods: {
@@ -59,10 +71,9 @@ export default {
       this.chart.setOption(this.options);
       window.addEventListener(
         "resize",
-        () => {
-          debounce(this.chart.resize());
-        },
-        300
+        debounce(() => {
+          this.chart.resize();
+        }, 300)
       );
     }
   }
