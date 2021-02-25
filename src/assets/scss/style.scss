@@ -1,0 +1,58 @@
+//  全局样式
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: #343440;
+    text-decoration: none;
+  }
+  
+  .clearfix {
+    &::after {
+      content: "";
+      display: table;
+      height: 0;
+      line-height: 0;
+      visibility: hidden;
+      clear: both;
+    }
+  }
+  
+  //浮动
+  .float-r {
+    float: right;
+  }
+  
+  //浮动
+  .float-l {
+    float: left;
+  }
+  
+  // 字体加粗
+  .fw-b {
+    font-weight: bold;
+  }
+  
+  //文章一行显示，多余省略号显示
+  .title-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
