@@ -14,5 +14,8 @@ module.exports = {
     },
     requireModuleExtension: true
   },
+  devServer: {
+    disableHostCheck: true
+  },
   productionSourceMap: false // 生产环境是否生成 sourceMap 文件
 };
