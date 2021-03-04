@@ -31,7 +31,7 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   width: 50%;
-  height: 200px;
+  height: 180px;
   border: 1px solid #ccc; /*no*/
 }
 </style>

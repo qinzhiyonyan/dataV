@@ -1,4 +1,5 @@
 import {
+  Button,
   Select,
   Option,
   OptionGroup,
@@ -10,6 +11,7 @@ import {
 } from "element-ui";
 const element = {
   install: function(Vue) {
+    Vue.use(Button);
     Vue.use(Select);
     Vue.use(Option);
     Vue.use(OptionGroup);

@@ -22,7 +22,7 @@ export default {
     },
     height: {
       type: String,
-      default: "2.5rem"
+      default: "2.3rem"
     },
     options: {
       type: Object,

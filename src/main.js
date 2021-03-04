@@ -8,7 +8,7 @@ import "@/utils/flexible.js";
 import "@/assets/scss/style.scss";
 // 按需引入element组件
 import element from "@/plugins/element";
-Vue.use(element);
+Vue.use(element, { size: "small", zIndex: 3000 });
 
 Vue.config.productionTip = false;
 
