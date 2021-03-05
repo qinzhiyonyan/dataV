@@ -86,7 +86,8 @@
     } else if (width / dpr > 2560) {
       width = 2560 * dpr;
     }
-    var rem = width / 10;
+    // 设置成24等份，设计稿时1920px的，这样1rem就是80px
+    var rem = width / 24;
     docEl.style.fontSize = rem + "px";
     flexible.rem = win.rem = rem;
   }

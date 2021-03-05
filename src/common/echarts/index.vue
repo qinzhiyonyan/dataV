@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import echarts from "@/utils/initEcharts";
+import echarts from "@/plugins/echarts";
 import { debounce } from "@/utils";
 export default {
   name: "echart",
@@ -22,7 +22,7 @@ export default {
     },
     height: {
       type: String,
-      default: "2.3rem"
+      default: "6.75rem"
     },
     options: {
       type: Object,
