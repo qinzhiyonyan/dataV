@@ -4,6 +4,9 @@ import router from "./router";
 import store from "./store";
 import "@/utils/flexible.js";
 
+import vuePlugin from "@/vuePlugin";
+Vue.use(vuePlugin);
+
 // 引入全局css
 import "@/assets/scss/style.scss";
 

@@ -6,7 +6,8 @@ const resolve = dir => {
 module.exports = {
   publicPath: "./",
   chainWebpack: config => {
-    config.resolve.alias.set("_c", resolve("src/components")); // key,value自行定义，比如.set('@@', resolve('src/components'))
+    // key,value自行定义，比如.set('@@', resolve('src/components'))
+    config.resolve.alias.set("_c", resolve("src/components"));
   },
   productionSourceMap: false // 生产环境是否生成 sourceMap 文件
 };
