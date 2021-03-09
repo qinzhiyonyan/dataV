@@ -8,7 +8,10 @@ import {
   Tree,
   Dialog,
   Row,
-  Col
+  Col,
+  Notification,
+  Message,
+  MessageBox
 } from "element-ui";
 const element = {
   install: function(Vue) {
@@ -22,6 +25,11 @@ const element = {
     Vue.use(Dialog);
     Vue.use(Row);
     Vue.use(Col);
+    Vue.prototype.$notify = Notification;
+    Vue.prototype.$message = Message;
+    Vue.prototype.$alert = MessageBox.alert;
+    Vue.prototype.$confirm = MessageBox.confirm;
+    Vue.prototype.$prompt = MessageBox.prompt;
   }
 };
 export default element;

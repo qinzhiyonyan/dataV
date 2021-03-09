@@ -1,4 +1,5 @@
 import axios from "axios";
+// 注意此处this为undefined，不指向Vue示例
 import { Loading, Message, MessageBox } from "element-ui";
 import store from "@/store";
 import crypto from "./crypto";
@@ -30,6 +31,7 @@ service.interceptors.request.use(
       config.headers["sign"] = s;
       config.headers["sysTime"] = time;
     }
+    console.log(this);
     // loading 开启
     loadingInstance = Loading.service({
       fullscreen: true,
@@ -67,14 +69,14 @@ service.interceptors.response.use(
       Message({
         message,
         type: "error",
-        duration: 2000
+        duration: 1000
       });
     }
     if (statusCode === "200") {
       Message({
         message,
         type: "success",
-        duration: 2000
+        duration: 1000
       });
     }
     return response;
