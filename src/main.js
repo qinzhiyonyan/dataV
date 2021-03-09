@@ -4,15 +4,19 @@ import router from "./router";
 import store from "./store";
 import "@/utils/flexible.js";
 
-import vuePlugin from "@/vuePlugin";
-Vue.use(vuePlugin);
-
 // 引入全局css
 import "@/assets/scss/style.scss";
+
+import vuePlugin from "@/vuePlugin";
+Vue.use(vuePlugin);
 
 // 按需引入element组件
 import element from "@/plugins/element";
 Vue.use(element);
+
+// 按需引入vueAwesome
+import vueAwesome from "@/plugins/vueAwesome";
+Vue.use(vueAwesome);
 
 // 按需引入dataV
 import dataV from "@/plugins/dataV";

@@ -13,6 +13,9 @@ import {
   Message,
   MessageBox
 } from "element-ui";
+// 引入自定义主题色
+import "@/assets/scss/element-variables.scss";
+
 const element = {
   install: function(Vue) {
     Vue.use(Icon);

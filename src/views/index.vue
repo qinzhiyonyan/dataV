@@ -1,7 +1,10 @@
 <template>
   <div id="index">
     <dv-full-screen-container>
-      <dv-loading v-if="loading">Loading...</dv-loading>
+      <span style="color:#5cd9e8">
+        <icon name="chart-bar"></icon>
+      </span>
+      <dv-loading v-if="loading">loading...</dv-loading>
       <div v-else class="main-body">
         <div class="left" @click="login">
           <CenterLeftChart />
@@ -30,6 +33,20 @@ export default {
     };
   },
   mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("keyup", e => {
+        if (e.keyCode === 27) {
+          this.$confirm("是否确认", "提示", {
+            confirmButtonText: "确认",
+            cancelButtonText: "取消",
+            type: "warning"
+          }).then(() => {
+            this.$alert("111");
+          });
+        }
+      });
+    });
+
     this.cancelLoading();
   },
   methods: {

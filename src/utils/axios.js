@@ -23,7 +23,7 @@ service.interceptors.request.use(
     if (token.accessToken) config.headers["accessToken"] = token.accessToken;
     // sign 签名
     if (difTime && difTime != "undefined") {
-      let str = config.url.split("?")[0].subst(1);
+      let str = config.url.split("?")[0].substr(1);
       let time = new Date().getTime() + Number(difTime);
       let sign = `/${str}${time}${token.accessToken}`;
       let key = "abcdefgabcdefg";
