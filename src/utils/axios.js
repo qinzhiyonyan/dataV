@@ -31,7 +31,6 @@ service.interceptors.request.use(
       config.headers["sign"] = s;
       config.headers["sysTime"] = time;
     }
-    console.log(this);
     // loading 开启
     loadingInstance = Loading.service({
       fullscreen: true,
