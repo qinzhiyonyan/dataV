@@ -6,4 +6,5 @@ const dataV = {
     Vue.use(fullScreenContainer);
   }
 };
+
 export default dataV;

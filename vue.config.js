@@ -6,7 +6,7 @@ const resolve = dir => {
 module.exports = {
   publicPath: "./",
   chainWebpack: config => {
-    // key,value自行定义，比如.set('@@', resolve('src/components'))
+    // key,value自行定义，比如.set('@', resolve('src/components'))
     config.resolve.alias.set("_c", resolve("src/components"));
     config
       .plugin("webpack-bundle-analyzer")
