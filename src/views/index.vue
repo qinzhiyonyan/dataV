@@ -46,14 +46,35 @@ export default {
         }
       });
     });
-
     this.cancelLoading();
+
+    window.addEventListener("beforeunload", e => this.beforeunloadHandler(e));
+    window.addEventListener("unload", e => this.unloadHandler(e));
+    this.$on("hook:destroyed", () => {
+      window.removeEventListener("beforeunload", e =>
+        this.beforeunloadHandler(e)
+      );
+    });
+    this.$on("hook:destroyed", () => {
+      window.removeEventListener("unload", e => this.beforeunloadHandler(e));
+    });
   },
   methods: {
     cancelLoading() {
       setTimeout(() => {
         this.loading = false;
       }, 1000);
+    },
+    beforeunloadHandler() {
+      this._beforeUnload_time = new Date().getTime();
+    },
+    unloadHandler() {
+      this._gap_time = new Date().getTime() - this._beforeUnload_time;
+      //判断是窗口关闭还是刷新
+      if (this._gap_time <= 5) {
+        //如果是登录状态，关闭窗口前，移除用户
+        debugger;
+      }
     },
     async login() {
       const result = await this.m_apiFn(login, { userName: "1111" });

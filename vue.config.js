@@ -5,6 +5,13 @@ const resolve = dir => {
 
 module.exports = {
   publicPath: "./",
+  lintOnSave: false,
+  devServer: {
+    overlay: {
+      warning: false,
+      errors: false
+    }
+  },
   chainWebpack: config => {
     // key,value自行定义，比如.set('@', resolve('src/components'))
     config.resolve.alias.set("_c", resolve("src/components"));
