@@ -56,7 +56,7 @@ export default {
       );
     });
     this.$on("hook:destroyed", () => {
-      window.removeEventListener("unload", e => this.beforeunloadHandler(e));
+      window.removeEventListener("unload", e => this.unloadHandler(e));
     });
   },
   methods: {
