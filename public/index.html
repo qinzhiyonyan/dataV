@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <!-- 常用图标 -->
+    <link
+      href="//at.alicdn.com/t/font_1331132_g7tv7fmj6c9.css"
+      rel="stylesheet"
+    />
+    <!-- 新通用图标topology-new -->
+    <link
+      href="//at.alicdn.com/t/font_2030495_3ziztwjjab6.css"
+      rel="stylesheet"
+    />
+    <!-- 老图标 -->
+    <link
+      href="//at.alicdn.com/t/font_1331132_5lvbai88wkb.css"
+      rel="stylesheet"
+    />
+
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
@@ -13,5 +29,11 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+      
+    <!-- 需要用到的工具js -->
+    <script src="http://topology.le5le.com/js/canvas2svg.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.bootcss.com/jszip/3.2.2/jszip.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.min.js"></script>
   </body>
 </html>
