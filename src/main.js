@@ -22,12 +22,6 @@ Vue.use(vueAwesome);
 import dataV from "@/plugins/dataV";
 Vue.use(dataV);
 
-// 导入topology-vue组件
-import topology from "topology-vue";
-Vue.use(topology);
-// 需要导入topology-vue.css
-import "topology-vue/topology-vue.css";
-
 Vue.config.productionTip = false;
 
 new Vue({
