@@ -7,6 +7,7 @@
 <script>
 import Chart from "./chart.vue";
 export default {
+  name: "centerLeft",
   data() {
     return {
       cdata: {

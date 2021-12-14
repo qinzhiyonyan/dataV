@@ -10,6 +10,9 @@ import "@/assets/scss/style.scss";
 import vuePlugin from "@/vuePlugin";
 Vue.use(vuePlugin);
 
+// 组件注册
+import "@/components";
+
 // 按需引入element组件
 import element from "@/plugins/element";
 Vue.use(element);

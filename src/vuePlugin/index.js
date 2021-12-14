@@ -14,9 +14,9 @@ const vuePlugin = () => {
     methods: {
       ...mapMutations({
         setToken: "SET_TOKEN",
-        set_difTime: "SET_DIFTIME",
-        set_appId: "SET_APPID",
-        set_userId: "SET_USERID"
+        setDifTime: "SET_DIFTIME",
+        setAppId: "SET_APPID",
+        setUserId: "SET_USERID"
       }),
       /**
        * api请求(promise统一封装)

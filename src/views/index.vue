@@ -1,33 +1,28 @@
 <template>
   <div id="index">
     <el-button size="small" type="primary" @click="sendMessage">发送</el-button>
-    <!-- <dv-full-screen-container>
+    <dv-full-screen-container>
       <span style="color:#5cd9e8">
         <icon name="chart-bar"></icon>
       </span>
       <dv-loading v-if="loading">loading...</dv-loading>
       <div v-else class="main-body">
         <div class="left" @click="login">
-          <CenterLeftChart />
+          <center-left></center-left>
         </div>
         <div class="right">
-          <CenterRightChart />
+          <center-right></center-right>
         </div>
       </div>
-    </dv-full-screen-container> -->
+    </dv-full-screen-container>
   </div>
 </template>
 
 <script>
-import CenterLeftChart from "_c/centerLeft";
-import CenterRightChart from "_c/centerRight";
 import { login } from "@/api/login";
 export default {
   name: "Home",
-  components: {
-    CenterLeftChart,
-    CenterRightChart
-  },
+  components: {},
   data() {
     return {
       loading: true
