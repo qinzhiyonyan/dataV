@@ -20,5 +20,5 @@ require("echarts/lib/component/geo");
 require("echarts/lib/component/radar");
 require("echarts/lib/component/markLine");
 require("echarts/lib/component/markPoint");
-
+require("echarts/lib/component/toolbox");
 export default echarts;
