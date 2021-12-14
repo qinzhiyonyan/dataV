@@ -25,10 +25,12 @@ const vuePlugin = () => {
        * @param {message} 回调提示信息
        */
       m_apiFn(api, params) {
-        return new Promise(resolve => {
+        return new Promise((resolve, reject) => {
           api(params).then(data => {
-            if (data.statusCode === "200" || data.statusCode === "708") {
+            if (data.statusCode === "200") {
               resolve(data);
+            } else {
+              reject(data);
             }
           });
         });
