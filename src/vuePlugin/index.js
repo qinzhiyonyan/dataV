@@ -1,5 +1,6 @@
 import Vue from "vue";
 import axios from "@/utils/axios";
+import { cloneDeep } from "lodash";
 import { mapGetters, mapMutations } from "vuex";
 
 const vuePlugin = () => {
@@ -66,6 +67,20 @@ const vuePlugin = () => {
           .catch(err => {
             console.log(err);
           });
+      },
+      /**
+       * 深拷贝
+       */
+      m_copy(v) {
+        return cloneDeep(v);
+      },
+      /**
+       * 重置表单操作
+       * @param {formName} 表单ref名
+       */
+      m_resetForm(formName) {
+        this.$refs[formName].resetFields();
+        this.$refs[formName].clearValidate();
       }
     }
   });
