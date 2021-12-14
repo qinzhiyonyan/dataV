@@ -1,6 +1,5 @@
 <template>
   <div id="index">
-    <el-button size="small" type="primary" @click="sendMessage">发送</el-button>
     <dv-full-screen-container>
       <span style="color:#5cd9e8">
         <icon name="chart-bar"></icon>
@@ -71,9 +70,6 @@ export default {
         //如果是登录状态，关闭窗口前，移除用户
         debugger;
       }
-    },
-    sendMessage() {
-      this.$router.push({ name: "Draw", params: { zbId: "111111" } });
     },
     async login() {
       const result = await this.m_apiFn(login, { userName: "1111" });
