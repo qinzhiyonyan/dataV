@@ -1,4 +1,5 @@
 import Vue from "vue";
+import axios from "@/utils/axios";
 import { mapGetters, mapMutations } from "vuex";
 
 const vuePlugin = () => {
@@ -30,6 +31,41 @@ const vuePlugin = () => {
             }
           });
         });
+      },
+
+      /**
+       * 下载excel文件
+       * @param {url} 下载地址
+       * @param {params} 参数
+       * @param {fileName} 下载excel名称
+       * @param {methods} 请求方式
+       */
+      downloadExcel(url, params, fileName = "导出表格", methods = "post") {
+        let axiosParams = {
+          methods,
+          url,
+          responseType: "blob"
+        };
+        if (methods === "get") {
+          axiosParams.params = params;
+        } else {
+          axiosParams.data = params;
+        }
+        axios(axiosParams)
+          .then(res => {
+            const blob = new Blob([res.data], {
+              type: "application/vnd.ms-excel"
+            });
+            let url = window.URL.createObjectURL(blob);
+            let a = document.createElement("a");
+            a.href = url;
+            a.download = `${fileName}.xlsx`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+          })
+          .catch(err => {
+            console.log(err);
+          });
       }
     }
   });
