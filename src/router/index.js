@@ -15,6 +15,12 @@ const routes = [
     name: "Editor",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/editor.vue")
+  },
+  {
+    path: "/diagram",
+    name: "Diagram",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/diagram.vue")
   }
 ];
 
